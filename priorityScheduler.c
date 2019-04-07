@@ -12,7 +12,7 @@
 /* Structure database for Process creation  OR PCB*/ 
 
 struct process_data{
-	int pid,arr_time,serv_time,inqueue,end_time,prio_key;
+	int pid,arr_time,serv_time,end_time,prio_key;
 };
 
 /*Swapping Process p1 and p2 through pointers if condition satisfied*/
@@ -64,9 +64,8 @@ void process_execute(struct process_data process[],int no_of_proc)
 		for(i=0;i<no_of_proc;i++){
 			/*If process is already been in ready_queue then it will not be added
 			  If a process arrives matches with cpu clock it will added to ready_queue*/
-			if(process[i].inqueue == 0 && burst == process[i].arr_time){  
+			if(burst == process[i].arr_time){  
 				ready_queue[rqcount] = process[i];
-				process[i].inqueue = 1;
 				rqcount++;
 			}
 		}
@@ -116,7 +115,7 @@ int main()
 	for(i=0;i<no_of_proc;i++){
 		printf("Enter Pid | arrival_Time | service_Time for %d Process: ",i+1);
 		scanf("%d%d%d",&process[i].pid,&process[i].arr_time,&process[i].serv_time);
-		process[i].inqueue = process[i].end_time = process[i].prio_key = 0;	
+		process[i].end_time = process[i].prio_key = 0;	
 	}	
 	
 	process_execute(process,no_of_proc);
