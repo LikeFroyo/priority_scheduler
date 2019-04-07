@@ -87,7 +87,7 @@ void process_execute(struct process_data process[],int no_of_proc)
 	
 		/*If First process of ready_queue is completed it will out of the memory*/
 		if(ready_queue[0].serv_time == 0){
-			sum += (ready_queue[0].end_time-ready_queue[0].arr_time-process[ready_queue[0].pid-1].serv_time);
+			sum += (ready_queue[0].end_time-ready_queue[0].arr_time-process[ready_queue[0].pid-1].serv_time)+1; // 1 bcz burst is incremented after
 			--unCompPro;
 			for(j=0;j<rqcount-1;j++)	
 				ready_queue[j] = ready_queue[j+1];
