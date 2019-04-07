@@ -74,7 +74,7 @@ void process_execute(struct process_data process[],int no_of_proc)
 		quickSort(ready_queue,0,rqcount-1);	//Sorting queue according to their priority
 	
 	//  For checking the execution order
-	//	printf("%s %d %d %d \n",ready_queue[0].pid,ready_queue[0].arr_time,ready_queue[0].serv_time,ready_queue[0].prio_key); 
+	//	printf("%d %d %d %d \n",ready_queue[0].pid,ready_queue[0].arr_time,ready_queue[0].serv_time,ready_queue[0].prio_key); 
 	
 		/*Cpu is allocated and Process execution start*/	
 		ready_queue[0].serv_time--;
