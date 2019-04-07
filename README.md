@@ -3,11 +3,11 @@ Scheduler that uses a preemptive priority scheduling algorithm based on dynamica
 
 Sample Data Set:
 
-[ProcessID | Arrival Time | Service Time]
-[  1            0                 4 ]
+[ProcessID | Arrival Time | Service Time]:
+[  1            0                 4 ],
 [  2            1                 1 ]
-[  3            2                 2 ]
-[  4            3                 1 ]
+[  3            2                 2 ],
+[  4            3                 1 ],
 
 Avg waiting time : 1 sec
 
