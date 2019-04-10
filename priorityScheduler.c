@@ -83,6 +83,10 @@ void process_execute(struct process_data process[],int no_of_proc)
 		ready_queue[0].serv_time--;
 		ready_queue[0].end_time = burst;
 		ready_queue[0].prio_key += 1;
+		
+		/*Every other waiting in ready_queue will be incremented with 2 in the priority*/
+		for(j=1;j<rqcount;j++)
+			ready_queue[j].prio_key += 2;
 	
 		/*If First process of ready_queue is completed it will out of the memory*/
 		if(ready_queue[0].serv_time == 0){
@@ -92,9 +96,7 @@ void process_execute(struct process_data process[],int no_of_proc)
 				ready_queue[j] = ready_queue[j+1];
 			rqcount--;
 		}
-		/*Every other waiting in ready_queue will be incremented with 2 in the priority*/
-		for(j=1;j<rqcount;j++)
-			ready_queue[j].prio_key += 2;
+		
 		
 		burst++;
 	}
