@@ -9,6 +9,6 @@ Sample Data Set:
 [  3            2                 2 ],
 [  4            3                 1 ],
 
-Avg waiting time : 1 sec
+Avg waiting time : 2.25 sec
 
 NOTE: Processor ID should be UNIQUE as if in Operating SYSTEM.
